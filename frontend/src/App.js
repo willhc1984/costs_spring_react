@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Container from './components/layout/Container';
-import Company from './components/pages/Company';
-import Contact from './components/pages/Contact';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Home from './components/pages/Home';
+import Contact from './components/pages/Contact';
 import NewProject from './components/pages/NewProject';
+import Company from './components/pages/Company';
+
+import Container from './components/layout/Container';
 import NavBar from './components/layout/NavBar';
 import Footer from './components/layout/Footer';
 import Projects from './components/pages/Projects';
@@ -11,26 +12,31 @@ import Projects from './components/pages/Projects';
 function App() {
   return (
     <Router>
-     <NavBar />
-      <Container customClass="min-height">
-        <Routes>
-          <Route path="/" element={<Home />} > </Route>
-        </Routes>
-        <Routes>
-          <Route path="/projects" element={<Projects />} > </Route>
-        </Routes>
-        <Routes>
-          <Route path="/company" element={<Company />} > </Route>
-        </Routes>
-        <Routes>
-          <Route path="/contact" element={<Contact />} > </Route>
-        </Routes>
-        <Routes>
-          <Route path="/newproject" element={<NewProject />} > </Route>
-        </Routes>
-      </Container>
+      <div>
+        <NavBar />
+      </div>
+      <Switch>
+        <Container customClass="min-height">
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/company">
+            <Company />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/newproject">
+            <NewProject />
+          </Route>
+          <Route exact path="/projects">
+            <Projects />
+          </Route>
+        </Container>
+      </Switch>
       <Footer />
     </Router>
+
   );
 }
 

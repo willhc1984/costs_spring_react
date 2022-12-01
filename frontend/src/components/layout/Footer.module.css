@@ -1,14 +1,14 @@
 .footer{
     background-color: #222;
+    color: #FFF;
     padding: 3em;
-    color: #fff;
     text-align: center;
 }
 
 .social_list{
-    display: inline-block;
-    list-style-type: none;
+    display: flex;
     justify-content: center;
+    list-style-type: none;
 }
 
 .social_list li{
@@ -16,19 +16,19 @@
 }
 
 .social_list li:hover{
-    color: #ffbb33;
+   color: #ffbb33;
 }
 
 .social_list svg{
-    font-size: 2.5em;
     cursor: pointer;
-}
+    font-size: 1.5em;
+ }
 
-.copy_right{
+ .copy_right{
     margin-top: 2em;
-}
+ }
 
-.copy_right span{
+ .copy_right span{
     font-weight: bold;
     color: #ffbb33;
-}
+ }
